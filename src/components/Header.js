@@ -6,7 +6,7 @@ export default function Header() {
 
   return (
     <div className="header">
-      <h1>Memory Game</h1>
+      <h1>Memory Game 👀</h1>
       {difficulty === null ? (
         <div className="buttons">
           <button onClick={() => setDifficulty(12)}>Easy</button>

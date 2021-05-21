@@ -1,7 +1,18 @@
 body {
-  text-align: center;
   background-color: #fae2dc;
   background-image: url("https://www.transparenttextures.com/patterns/dark-circles.png");
+}
+.App {
+  text-align: right;
+}
+.container {
+  text-align: center;
+}
+small {
+  color: #6e3f64;
+  opacity: 0.4;
+  margin-right: 10px;
+  font-weight: bold;
 }
 
 button {
