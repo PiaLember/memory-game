@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
 
-export default function Game({ difficulty }) {
+export default function Game({ difficulty, setDifficulty }) {
   let [game, setGame] = useState([]);
   let [count, setCount] = useState([]);
   let [flippedCount, setFlippedCount] = useState(0);
@@ -51,6 +51,15 @@ export default function Game({ difficulty }) {
       setCount(newCount);
     }
   }
+  useEffect(() => {
+    let finished = !game.some((card) => !card.flipped);
+    if (finished && game.length > 0) {
+      setTimeout(() => {
+        alert("Good job!");
+        setDifficulty(null);
+      }, 1000);
+    }
+  }, [game]);
 
   return (
     <div className="cards">

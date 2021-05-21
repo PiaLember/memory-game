@@ -20,7 +20,7 @@ export default function Header() {
       )}
 
       {difficulty ? (
-        <Game difficulty={difficulty} />
+        <Game difficulty={difficulty} setDifficulty={setDifficulty} />
       ) : (
         <h3>Choose a difficulty to begin!</h3>
       )}
