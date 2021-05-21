@@ -1,17 +1,58 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSpring, animated as a } from "react-spring";
 
-export default function Card(props) {
+export default function Card({
+  id,
+  colorId,
+  game,
+  color,
+  count,
+  setCount,
+  flippedCount,
+  setFlippedCount,
+}) {
   let [flipped, set] = useState(false);
   let { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
     transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
     config: { mass: 5, tension: 500, friction: 80 },
   });
-  let game = props.game;
+
+  useEffect(() => {
+    if (count[2] === true && count.indexOf(id) > -1) {
+      setTimeout(() => {
+        set((state) => !state);
+        setFlippedCount(flippedCount + 1);
+        setCount([]);
+      }, 1000);
+    } else if (count[2] === false && id === 0) {
+      setFlippedCount(flippedCount + 1);
+      setCount([]);
+    }
+  }, [count]);
+
+  function onCardClick() {
+    if (!game[id].flipped && flippedCount % 3 === 0) {
+      set((state) => !state);
+      setFlippedCount(flippedCount + 1);
+      let newCount = [...count];
+      newCount.push(id);
+      setCount(newCount);
+    } else if (
+      flippedCount % 3 === 1 &&
+      !game[id].flipped &&
+      count.indexOf(id) < 0
+    ) {
+      set((state) => !state);
+      setFlippedCount(flippedCount + 1);
+      let newCount = [...count];
+      newCount.push(id);
+      setCount(newCount);
+    }
+  }
 
   return (
-    <div className="card" onClick={() => set((state) => !state)}>
+    <div className="card" onClick={onCardClick}>
       <a.div
         className="c back"
         style={{
@@ -25,7 +66,7 @@ export default function Card(props) {
           opacity,
           transform,
           rotateX: "180deg",
-          background: props.color,
+          background: color,
         }}
       />
     </div>
