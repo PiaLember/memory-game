@@ -8,21 +8,28 @@ export default function Header() {
     <div className="header">
       <h1>Memory Game</h1>
       {difficulty === null ? (
-        <div>
+        <div className="buttons">
           <button onClick={() => setDifficulty(12)}>Easy</button>
           <button onClick={() => setDifficulty(18)}>Medium</button>
           <button onClick={() => setDifficulty(24)}>Hard</button>
         </div>
       ) : (
-        <div>
+        <div className="buttons">
           <button onClick={() => setDifficulty(null)}>Back</button>
+          <hr />
         </div>
       )}
 
       {difficulty ? (
-        <Game difficulty={difficulty} setDifficulty={setDifficulty} />
+        <div>
+          <Game difficulty={difficulty} setDifficulty={setDifficulty} />
+          <hr />
+        </div>
       ) : (
-        <h3>Choose a difficulty to begin!</h3>
+        <div>
+          <h3>Choose a difficulty to begin!</h3>
+          <hr />
+        </div>
       )}
     </div>
   );
