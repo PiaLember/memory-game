@@ -24,8 +24,12 @@ export default function Card({
         set((state) => !state);
         setFlippedCount(flippedCount + 1);
         setCount([]);
+        let sound1 = new Audio("sounds/small.wav");
+        sound1.play();
       }, 1000);
     } else if (count[2] === false && id === 0) {
+      let sound3 = new Audio("sounds/unlock.wav");
+      sound3.play();
       setFlippedCount(flippedCount + 1);
       setCount([]);
     }
@@ -35,6 +39,8 @@ export default function Card({
     if (!game[id].flipped && flippedCount % 3 === 0) {
       set((state) => !state);
       setFlippedCount(flippedCount + 1);
+      let sound1 = new Audio("sounds/small.wav");
+      sound1.play();
       let newCount = [...count];
       newCount.push(id);
       setCount(newCount);
@@ -45,6 +51,8 @@ export default function Card({
     ) {
       set((state) => !state);
       setFlippedCount(flippedCount + 1);
+      let sound1 = new Audio("sounds/small.wav");
+      sound1.play();
       let newCount = [...count];
       newCount.push(id);
       setCount(newCount);

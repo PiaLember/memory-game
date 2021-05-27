@@ -54,8 +54,11 @@ export default function Game({ difficulty, setDifficulty }) {
   useEffect(() => {
     let finished = !game.some((card) => !card.flipped);
     if (finished && game.length > 0) {
+      let sound2 = new Audio("sounds/complete.wav");
+      sound2.play();
       setTimeout(() => {
         alert("Good job!");
+
         setDifficulty(null);
       }, 1000);
     }
