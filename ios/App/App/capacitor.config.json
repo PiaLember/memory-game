@@ -1,0 +1,6 @@
+{
+	"appId": "com.example.app",
+	"appName": "memory-game",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

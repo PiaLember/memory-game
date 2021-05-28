@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.memory-game",
+  "appName": "memory-game",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "cordova": {}
+}
