@@ -65,6 +65,7 @@ button:focus {
   position: absolute;
   max-width: 146px;
   max-height: 146px;
+
   width: 146px;
   height: 146px;
   cursor: pointer;
@@ -80,19 +81,15 @@ button:focus {
   background-image: url(https://dayfinders.com/wp-content/uploads/2019/06/Unicorn-Day-01.png);
 }
 
-@media only screen and (max-width: 600px) {
-  .container {
-    width: 100%;
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .c {
+    max-width: 186px;
+    max-height: 186px;
+    width: 186px;
+    height: 186px;
   }
   .card {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 20px;
-  }
-  .c {
-    max-width: 80px;
-    max-height: 80px;
-    width: 80px;
-    height: 80px;
+    width: 186px;
+    height: 186px;
   }
 }
