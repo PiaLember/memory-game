@@ -79,3 +79,20 @@ button:focus {
 .back {
   background-image: url(https://dayfinders.com/wp-content/uploads/2019/06/Unicorn-Day-01.png);
 }
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+  .card {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+  .c {
+    max-width: 80px;
+    max-height: 80px;
+    width: 80px;
+    height: 80px;
+  }
+}
